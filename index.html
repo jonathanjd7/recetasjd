@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Deliciosas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        
+            <div class="nav-left">
+                <a href="index.html" class="home-button">
+                    <i class="fas fa-home"></i>
+                </a>
+                <h1>Recetas Deliciosas</h1>
+                <button id="toggleDarkMode">🌙 Modo oscuro</button>
+            </div>
+            <nav class="main-nav"></nav>
+            <div class="nav-buttons">
+                <button class="nav-button" data-category="primeros">Primeros</button>
+                <button class="nav-button" data-category="segundos">Segundos</button>
+                <button class="nav-button" data-category="postres">Postres</button>
+                <button class="nav-button" data-category="bebidas">Bebidas</button>
+                <button class="nav-button" data-category="menu">Menú</button>
+                <button class="nav-button" data-category="carta">Platos a la Carta</button>
+            </div>
+        </nav>
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search" placeholder="Buscar receta por nombre...">
+                <button id="clearSearch" class="clear-button" title="Limpiar búsqueda">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="recipeList" class="recipe-grid">
+            <!-- Las recetas se cargarán dinámicamente aquí -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Recetas Deliciosas - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
