@@ -204,7 +204,7 @@ main {
 .recipe-category {
     display: inline-block;
     background: #ff6b6b;
-    color: white;
+    color: rgb(19, 7, 7);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -278,16 +278,7 @@ header {
 }
 
 /* Estilos de la navegación principal */
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    margin-bottom: 1rem;
-;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+
 
 .nav-left {
     display: flex;
@@ -391,14 +382,34 @@ body.dark-mode .recipe-card {
 }
 
 body.dark-mode .recipe-description {
+    background-color: #1e1e1e;
     color: #ccc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    
 }
+body.dark-mode .recipe-ingredients {
+    background-color: #1e1e1e;
+    color: #ccc;
+    
+}
+
 
 body.dark-mode .recipe-title {
     color: #fff;
 }
 
 body.dark-mode .recipe-category {
+    background-color: #26f359;
+    color: #fff;
+}
+
+body.dark-mode .recipe-time {
+    background-color: #26f359;
+    color: #fff;
+}
+
+body.dark-mode .recipe-difficulty {
     background-color: #26f359;
     color: #fff;
 }

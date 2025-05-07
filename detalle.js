@@ -101,3 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
     }
 }); 
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+      const header = document.querySelector("header");
+      if (header) header.classList.add("dark-mode");
+    }
+  
+    const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+    if (toggleDarkModeButton) {
+      toggleDarkModeButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const header = document.querySelector("header");
+        if (header) header.classList.toggle("dark-mode");
+        localStorage.setItem("darkMode", document.body.classList.contains("dark-mode").toString());
+      });
+    }
+  });
+  

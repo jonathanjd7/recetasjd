@@ -92,20 +92,33 @@ navButtons.forEach(button => {
 });
 
 // MODO OSCURO: Activar desde botón y mantener estado
-if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-}
 
-if (toggleDarkModeButton) {
-    toggleDarkModeButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-        }
+// Aplicar modo oscuro si está activado
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+  
+    const header = document.querySelector("header");
+    if (header) {
+      header.classList.add("dark-mode");
+    }
+  }
+  
+  // Solo añadir el eventListener si el botón existe
+  
+  if (toggleDarkModeButton) {
+    toggleDarkModeButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+  
+      const header = document.querySelector("header");
+      if (header) {
+        header.classList.toggle("dark-mode");
+      }
+  
+      const isDarkMode = document.body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDarkMode.toString());
     });
-}
+  }
+  
 
 // Inicializar la aplicación
 document.addEventListener('DOMContentLoaded', () => {

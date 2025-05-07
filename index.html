@@ -1,54 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recetas Deliciosas</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      .login-box {
+        max-width: 300px;
+        margin: 100px auto;
+        padding: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: white;
+        display: none; /* Ocultar por defecto */
+      }
+
+      .login-box h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .login-box form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .login-box input {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+      }
+
+      .login-box button {
+        padding: 0.5rem;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #logoutButton {
+        margin-left: 1rem;
+        padding: 0.3rem 0.6rem;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .nav-buttons {
+        margin-top: 1rem;
+      }
+
+      .nav-buttons button {
+        margin: 0.5rem;
+      }
+
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LOGIN BOX -->
+    <div id="loginBox" class="login-box">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Usuario" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Contraseña"
+          required />
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+
     <header>
-        
-            <div class="nav-left">
-                <a href="index.html" class="home-button">
-                    <i class="fas fa-home"></i>
-                </a>
-                <h1>Recetas Deliciosas</h1>
-                <button id="toggleDarkMode">🌙 Modo oscuro</button>
-            </div>
-            <nav class="main-nav"></nav>
-            <div class="nav-buttons">
-                <button class="nav-button" data-category="primeros">Primeros</button>
-                <button class="nav-button" data-category="segundos">Segundos</button>
-                <button class="nav-button" data-category="postres">Postres</button>
-                <button class="nav-button" data-category="bebidas">Bebidas</button>
-                <button class="nav-button" data-category="menu">Menú</button>
-                <button class="nav-button" data-category="carta">Platos a la Carta</button>
-            </div>
-        </nav>
-        <div class="search-container">
-            <div class="search-box">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" id="search" placeholder="Buscar receta por nombre...">
-                <button id="clearSearch" class="clear-button" title="Limpiar búsqueda">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+      <div class="nav-left">
+        <a href="index.html" class="home-button">
+          <i class="fas fa-home"></i>
+        </a>
+        <h1>Recetas Deliciosas</h1>
+        <button id="toggleDarkMode">🌙 Modo oscuro</button>
+        <button id="logoutButton" style="display: none">Cerrar sesión</button>
+      </div>
+      <nav class="main-nav"></nav>
+      <div class="nav-buttons">
+        <button class="nav-button" data-category="primeros">Primeros</button>
+        <button class="nav-button" data-category="segundos">Segundos</button>
+        <button class="nav-button" data-category="postres">Postres</button>
+        <button class="nav-button" data-category="bebidas">Bebidas</button>
+        <button class="nav-button" data-category="menu">Menú</button>
+        <button class="nav-button" data-category="carta">
+          Platos a la Carta
+        </button>
+      </div>
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="text"
+            id="search"
+            placeholder="Buscar receta por nombre..." />
+          <button
+            id="clearSearch"
+            class="clear-button"
+            title="Limpiar búsqueda">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
+      </div>
     </header>
 
     <main>
-        <div id="recipeList" class="recipe-grid">
-            <!-- Las recetas se cargarán dinámicamente aquí -->
-        </div>
+      <div id="recipeList" class="recipe-grid">
+        <!-- Las recetas se cargarán dinámicamente aquí -->
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Recetas Deliciosas - Todos los derechos reservados</p>
+      <p>&copy; 2025 Recetas Deliciosas - Todos los derechos reservados</p>
     </footer>
 
     <script src="data.js"></script>
     <script src="app.js"></script>
-</body>
-</html> 
+
+    <!-- LOGIN SCRIPT -->
+   <script src="login.js"></script>   
+  </body>
+</html>
